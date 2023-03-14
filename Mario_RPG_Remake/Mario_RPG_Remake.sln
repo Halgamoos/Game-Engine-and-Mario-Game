@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game_Engine", "Game_Engine\Game_Engine.vcxproj", "{82D2A7AD-7F33-440D-AA96-C37DA3B4E003}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mario_RPG_Game", "Mario_RPG_Game\Mario_RPG_Game.vcxproj", "{82D2A7AD-7F33-440D-AA96-C37DA3B4E003}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mario_RPG", "Mario_RPG\Mario_RPG.vcxproj", "{A8A8E969-B1A8-4F14-942A-9286243597D1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mario_RPG_Engine", "Mario_RPG_Engine\Mario_RPG_Engine.vcxproj", "{A8A8E969-B1A8-4F14-942A-9286243597D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
