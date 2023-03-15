@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(mario_rpg_remake)
+project(Mario_RPG_Remake)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -19,4 +19,5 @@ add_subdirectory(glfw)
 add_subdirectory(Mario_RPG_Engine)
 add_subdirectory(Mario_RPG_Game)
 
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT mario_rpg_game)
+# Mario_RPG_Game here VS_STARTUP_PROJECT NOT subdirectory
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Mario_RPG_Game)
