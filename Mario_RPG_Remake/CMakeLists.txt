@@ -17,5 +17,6 @@ endif()
 
 add_subdirectory(Mario_RPG_Engine)
 add_subdirectory(Mario_RPG_Game)
+add_subdirectory(glfw)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT mario_rpg_game)

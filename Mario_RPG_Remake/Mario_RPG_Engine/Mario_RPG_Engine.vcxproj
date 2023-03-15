@@ -19,12 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameWindow.cpp" />
+    <ClCompile Include="src\GLFWCode\GLFWimplementation.cpp" />
     <ClCompile Include="src\MarioRPGApp.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\MarioRPG.h" />
+    <ClInclude Include="src\GameWindow.h" />
+    <ClInclude Include="src\GLFWCode\GLFWimplementation.h" />
     <ClInclude Include="src\MarioRPGApp.h" />
     <ClInclude Include="src\MarioRPGUtils.h" />
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\WindowImplementation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\glfw_build\src\glfw.vcxproj">
+      <Project>{4345a041-0fc4-3931-b81f-bf5b296b7f70}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -122,9 +137,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)MARIORPG_LIB;MARIORPG_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)MARIORPG_LIB;MARIORPG_WINDOWS;MARIO_RPG_ENGINE_GLFW</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Mario_RPG_Engine\src;$(SolutionDir)glfw\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,9 +155,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)MARIORPG_LIB;MARIORPG_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)MARIORPG_LIB;MARIORPG_WINDOWS;MARIO_RPG_ENGINE_GLFW</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Mario_RPG_Engine\src;$(SolutionDir)glfw\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

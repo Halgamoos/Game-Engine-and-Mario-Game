@@ -1,7 +1,7 @@
+#include "pch.h"
 #include "MarioRPGApp.h"
-#include <iostream>
 
-namespace MarioRPG
+namespace Mario_RPG_Engine
 {
 	void MarioRPGApp::Run()
 	{
