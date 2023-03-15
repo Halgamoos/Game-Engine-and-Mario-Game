@@ -25,6 +25,16 @@ namespace Mario_RPG_Engine
 		mInstance->mImplementation->CreateWindow(width, height, windowName);
 	}
 
+	void GameWindow::SwapBuffers()
+	{
+		mInstance->mImplementation->SwapBuffers();
+	}
+
+	void GameWindow::PollEvents()
+	{
+		mInstance->mImplementation->PollEvents();
+	}
+
 	int GameWindow::GetWidth()
 	{
 		return mInstance->mImplementation->GetWidth();
@@ -35,12 +45,20 @@ namespace Mario_RPG_Engine
 		return mInstance->mImplementation->GetHeight();
 	}
 
+	GameWindow::~GameWindow()
+	{
+		if (mImplementation != nullptr)
+		{
+			delete mImplementation;
+		}
+	}
+
 	GameWindow::GameWindow()
 	{
 #ifdef MARIO_RPG_ENGINE_GLFW
 		mImplementation = new GLFWimplementation;
 #else
-	#ERROR_only_glfw_is_supported
+	#ERROR_only_GLFW_is_supported
 #endif // MARIO_RPG_ENGINE_GLFW
 	}
 }

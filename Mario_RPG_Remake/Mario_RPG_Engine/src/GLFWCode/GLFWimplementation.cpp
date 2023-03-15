@@ -26,6 +26,16 @@ namespace Mario_RPG_Engine
 		glfwMakeContextCurrent(mWindow);
 	}
 
+	void GLFWimplementation::SwapBuffers()
+	{
+		glfwSwapBuffers(mWindow);
+	}
+
+	void GLFWimplementation::PollEvents()
+	{
+		glfwPollEvents();
+	}
+
 	int GLFWimplementation::GetWidth() const
 	{
 		return 0;

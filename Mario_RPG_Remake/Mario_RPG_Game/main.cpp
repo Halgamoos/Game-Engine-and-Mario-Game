@@ -10,9 +10,13 @@ public:
 		Mario_RPG_Engine::GameWindow::CreateWindow(800, 600, "Mario RPG Remake");
 	}
 
+	// OnUpdate() Runs between frames
 	virtual void OnUpdate() override
 	{
 		std::cout << "Game is running \n";
+
+		Mario_RPG_Engine::GameWindow::SwapBuffers();
+		Mario_RPG_Engine::GameWindow::PollEvents();
 	}
 };
 
