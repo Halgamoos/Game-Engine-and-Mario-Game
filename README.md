@@ -5,12 +5,7 @@
 Clone the repository:
 
 ```bash
-git clone https://github.com/Halgamoos/Hamza_Algamoos_S23.git
-```
-
-Then pull the git submodules from the root directory where `.gitmodule` is contained:
-```bash
-git submodule update --init
+git clone --recursive https://github.com/Halgamoos/Hamza_Algamoos_S23.git
 ```
 
 Use the `CMake GUI` and make the `Source Code` in the `/Mario_RPG_Remake` directory.
