@@ -19,3 +19,14 @@ int main()\
 	game.Run();\
 	return 0;\
 }
+
+#if MARIO_DEBUG == 2
+	#define MARIO_LOG(x) std::clog << "Log: " << x << std::endl;
+	#define MARIO_ERROR(x) std::cerr << "ERROR: " << x << std::endl;
+#elif MARIO_DEBUG == 1
+	#define MARIO_LOG(x)
+	#define MARIO_ERROR(x) std::cerr << "ERROR: " << x << std::endl;
+#else
+	#define MARIO_LOG(x)
+	#define MARIO_ERROR(x)
+#endif

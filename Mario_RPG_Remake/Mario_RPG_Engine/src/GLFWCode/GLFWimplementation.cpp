@@ -38,11 +38,15 @@ namespace Mario_RPG_Engine
 
 	int GLFWimplementation::GetWidth() const
 	{
-		return 0;
+		int height{ 0 }, width{ 0 };
+		glfwGetWindowSize(mWindow, &width, &height);
+		return width;
 	}
 
 	int GLFWimplementation::GetHeight() const
 	{
-		return 0;
+		int height{ 0 }, width{ 0 };
+		glfwGetWindowSize(mWindow, &width, &height);
+		return height;
 	}
 }

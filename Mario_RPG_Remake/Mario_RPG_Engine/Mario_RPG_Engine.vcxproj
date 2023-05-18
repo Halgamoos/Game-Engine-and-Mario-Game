@@ -150,7 +150,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)MARIORPG_LIB;MARIORPG_WINDOWS;MARIO_RPG_ENGINE_GLFW;MARIO_RPG_ENGINE_GLFW;MARIO_OPENGL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)MARIORPG_LIB;MARIORPG_WINDOWS;MARIO_RPG_ENGINE_GLFW;MARIO_OPENGL;MARIO_DEBUG=2</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>

@@ -12,6 +12,8 @@ namespace Mario_RPG_Engine
 		Image(const std::string& imageFile);
 		Image(std::string&& imageFile);
 
+		void Activate();
+
 		int GetWidth() const;
 		int GetHeight() const;
 

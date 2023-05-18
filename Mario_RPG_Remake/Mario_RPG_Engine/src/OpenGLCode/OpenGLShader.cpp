@@ -138,6 +138,10 @@ namespace Mario_RPG_Engine
 		glDeleteShader(vertex);
 		glDeleteShader(fragment);
 	}
+	OpenGLShader::~OpenGLShader()
+	{
+		glDeleteProgram(mProgram);
+	}
 	void OpenGLShader::Activate()
 	{
 		glUseProgram(mProgram);
@@ -145,12 +149,14 @@ namespace Mario_RPG_Engine
 
 	void OpenGLShader::Pass2FLoatValues(const std::string& name, float val1, float val2)
 	{
+		glUseProgram(mProgram);
 		GLint location{ glGetUniformLocation(mProgram, name.c_str()) };
 		glUniform2f(location, val1, val2);
 	}
 
 	void OpenGLShader::Pass2FLoatValues(std::string&& name, float val1, float val2)
 	{
+		glUseProgram(mProgram);
 		GLint location{ glGetUniformLocation(mProgram, name.c_str()) };
 		glUniform2f(location, val1, val2);
 	}

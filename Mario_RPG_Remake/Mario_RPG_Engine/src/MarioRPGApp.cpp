@@ -6,6 +6,8 @@
 #include "stb_image.h"
 
 #include "Shader.h"
+// #include "Image.h"
+#include "GameWindow.h"
 
 namespace Mario_RPG_Engine
 {
@@ -13,7 +15,7 @@ namespace Mario_RPG_Engine
 	{
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 		{
-			std::cout << "Failed to initialize GLAD" << std::endl;
+			MARIO_ERROR("Failed to initialize GLAD");
 			return;
 		}
 
@@ -50,7 +52,7 @@ namespace Mario_RPG_Engine
 		glEnableVertexAttribArray(0);
 
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
-		glEnableVertexAttribArray(2);
+		glEnableVertexAttribArray(1);
 
 		///// TEXTURE //////////
 		unsigned int texture1;
@@ -68,7 +70,7 @@ namespace Mario_RPG_Engine
 
 		stbi_set_flip_vertically_on_load(true);
 
-		unsigned char* data = stbi_load("../Assets/Images/mario_jump.png", &width, &height, &nrChannels, 4);
+		unsigned char* data = stbi_load("../Assets/Images/mario_jump.png", &width, &height, &nrChannels, 0);
 
 		if (data == nullptr)
 		{
@@ -81,6 +83,8 @@ namespace Mario_RPG_Engine
 		stbi_image_free(data);
 
 		Shader sProgram{ "../Assets/Shaders/DefaultVertexShader.glsl" , "../Assets/Shaders/DefaultFragmentShader.glsl" };
+
+		sProgram.Pass2FLoatValues("screenSize", GameWindow::GetWidth(), GameWindow::GetHeight());
 
 		while (true)
 		{
