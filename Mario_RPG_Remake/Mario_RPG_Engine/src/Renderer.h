@@ -1,8 +1,10 @@
 #pragma once
 
+#include "pch.h"
 #include "MarioRPGUtils.h"
 #include "Image.h"
 #include "Shader.h"
+#include "RendererTypes.h"
 #include "ImplRenderer.h"
 
 namespace Mario_RPG_Engine
@@ -10,11 +12,18 @@ namespace Mario_RPG_Engine
 	class MARIORPG_API Renderer
 	{
 	public:
-		void Draw(Image& image, Shader& shader, int xCoord, int yCoord);
-		void Draw(Image& image, int xCoord, int yCoord);
+		Renderer();
+
+		void Draw(Image& image, Shader& shader, ScreenCoord coords);
+		void Draw(Image& image, ScreenCoord coords);
+
+		void Draw(Image& image, TextureBox texCoords, Shader& shader, ScreenCoord coords);
+		void Draw(Image& image, TextureBox texCoords, ScreenCoord coords);
+
+		void Clear();
 
 	private:
-		ImplRenderer* mImplementation {nullptr};
-
+		std::unique_ptr<ImplRenderer> mImplementation{ nullptr };
+		Shader mDefaultShader;
 	};
 }

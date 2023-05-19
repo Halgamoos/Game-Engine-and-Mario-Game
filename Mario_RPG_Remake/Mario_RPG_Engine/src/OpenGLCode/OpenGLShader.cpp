@@ -35,8 +35,6 @@ namespace Mario_RPG_Engine
 		std::string fShader;
 		std::ifstream i2file{ fragmentFile };
 
-		line = "";
-
 		while (std::getline(i2file, line))
 		{
 			fShader += line;
@@ -77,9 +75,8 @@ namespace Mario_RPG_Engine
 		std::ifstream ifile{ vertexFile };
 		std::string line;
 
-		while (ifile)
+		while (std::getline(ifile, line))
 		{
-			std::getline(ifile, line);
 			vShader += line;
 			vShader += "\n";
 		}
@@ -103,9 +100,8 @@ namespace Mario_RPG_Engine
 		std::string fShader;
 		std::ifstream i2file{ fragmentFile };
 
-		while (i2file)
+		while (std::getline(i2file, line))
 		{
-			std::getline(i2file, line);
 			fShader += line;
 			fShader += "\n";
 		}
@@ -121,7 +117,7 @@ namespace Mario_RPG_Engine
 		if (!success)
 		{
 			glGetShaderInfoLog(fragment, 1024, NULL, infoLog);
-			std::cout << "ERROR::SHADER_COMILATION_ERROR of type VERTEX:" << infoLog << "\n ---------------" << std::endl;
+			std::cout << "ERROR::SHADER_COMILATION_ERROR of type FRAGMENT:" << infoLog << "\n ---------------" << std::endl;
 		}
 
 		mProgram = glCreateProgram();

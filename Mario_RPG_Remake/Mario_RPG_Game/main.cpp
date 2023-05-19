@@ -13,8 +13,6 @@ public:
 	// OnUpdate() Runs between frames
 	virtual void OnUpdate() override
 	{
-		std::cout << "Game is running \n";
-
 		Mario_RPG_Engine::GameWindow::SwapBuffers();
 		Mario_RPG_Engine::GameWindow::PollEvents();
 	}

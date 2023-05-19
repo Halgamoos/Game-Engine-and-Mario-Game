@@ -1,4 +1,6 @@
 #pragma once
+
+#include "pch.h"
 #include "../WindowImplementation.h"
 #include "GLFW/glfw3.h"
 

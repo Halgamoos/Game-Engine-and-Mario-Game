@@ -18,6 +18,6 @@ namespace Mario_RPG_Engine
 		void Pass2FLoatValues(std::string&& name, float val1, float val2);
 
 	private:
-		std::unique_ptr<ImplShader> mImplementation;
+		std::unique_ptr<ImplShader> mImplementation{ nullptr };
 	};
 }

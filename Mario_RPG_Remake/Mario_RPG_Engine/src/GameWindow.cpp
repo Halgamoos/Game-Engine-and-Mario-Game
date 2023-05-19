@@ -4,6 +4,14 @@
 
 namespace Mario_RPG_Engine
 {
+	GameWindow::GameWindow()
+	{
+#ifdef MARIO_RPG_ENGINE_GLFW
+		mImplementation = new GLFWimplementation;
+#else
+		#ERROR_only_GLFW_is_supported
+#endif // MARIO_RPG_ENGINE_GLFW
+	}
 	void GameWindow::Init()
 	{
 		if (!mInstance)
@@ -22,7 +30,7 @@ namespace Mario_RPG_Engine
 
 	void GameWindow::CreateWindow(int width, int height, std::string&& windowName)
 	{
-		mInstance->mImplementation->CreateWindow(width, height, windowName);
+		mInstance->mImplementation->CreateWindow(width, height, std::move(windowName));
 	}
 
 	void GameWindow::SwapBuffers()
@@ -51,14 +59,5 @@ namespace Mario_RPG_Engine
 		{
 			delete mImplementation;
 		}
-	}
-
-	GameWindow::GameWindow()
-	{
-#ifdef MARIO_RPG_ENGINE_GLFW
-		mImplementation = new GLFWimplementation;
-#else
-	#ERROR_only_GLFW_is_supported
-#endif // MARIO_RPG_ENGINE_GLFW
 	}
 }

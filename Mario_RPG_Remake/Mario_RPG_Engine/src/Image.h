@@ -18,6 +18,6 @@ namespace Mario_RPG_Engine
 		int GetHeight() const;
 
 	private:
-		ImplImage* mImplementation{ nullptr };
+		std::unique_ptr<ImplImage> mImplementation{ nullptr }; // unique pointer instead of raw
 	};
 }
