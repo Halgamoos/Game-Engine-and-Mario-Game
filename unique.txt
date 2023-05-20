@@ -1,0 +1,6 @@
+Things that make this game unique:
+    - Mario can shoot fireballs with spacebar
+    - If the fireball hits the enemy, it's "Hitpoints" bar decreases and it shows on the screen
+    - Once the "Hitpoints" bar is diminished, the "dead" enemy is shown and "You Win!" appears
+    - The enemy character moves back and forth on its own
+    - Mario can move up and down
