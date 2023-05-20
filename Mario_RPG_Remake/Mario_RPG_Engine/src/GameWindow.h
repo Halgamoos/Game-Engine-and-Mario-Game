@@ -25,7 +25,7 @@ namespace Mario_RPG_Engine
 		~GameWindow();
 
 		void SetKeyPressedCallBack(std::function<void(const KeyPressed&)> callbackFunc);
-		void SetKeyReleasedCallBack(std::function<void(const KeyPressed&)> callbackFunc);
+		void SetKeyReleasedCallBack(std::function<void(const KeyReleased&)> callbackFunc);
 		void SetWindowCloseCallback(std::function<void()> callbackFunc);
 	private:
 		GameWindow(); // prevent posibility of creating second object

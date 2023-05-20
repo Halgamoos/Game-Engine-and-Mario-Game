@@ -64,7 +64,7 @@ namespace Mario_RPG_Engine
 	{
 		mImplementation->SetKeyPressedCallBack(callbackFunc);
 	}
-	void GameWindow::SetKeyReleasedCallBack(std::function<void(const KeyPressed&)> callbackFunc)
+	void GameWindow::SetKeyReleasedCallBack(std::function<void(const KeyReleased&)> callbackFunc)
 	{
 		mImplementation->SetKeyReleasedCallBack(callbackFunc);
 	}
