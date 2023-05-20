@@ -7,3 +7,6 @@
 #include "../src/Image.h"
 #include "../src/Renderer.h"
 #include "../src/RendererTypes.h"
+#include "../src/MarioRPGEvents.h"
+#include "../src/MarioKeys.h"
+#include "../src/Unit.h"

@@ -21,7 +21,7 @@ namespace Mario_RPG_Engine
 		stbi_set_flip_vertically_on_load(true);
 
 		int nrChannels;
-		unsigned char* data = stbi_load(imageFile.c_str(), &mWidth, &mHeight, &nrChannels, STBI_rgb_alpha);
+		unsigned char* data = stbi_load(imageFile.c_str(), &mWidth, &mHeight, &nrChannels, 0);
 
 		if (data == nullptr)
 		{
@@ -50,7 +50,7 @@ namespace Mario_RPG_Engine
 		stbi_set_flip_vertically_on_load(true);
 
 		int nrChannels;
-		unsigned char* data = stbi_load(imageFile.c_str(), &mWidth, &mHeight, &nrChannels, STBI_rgb_alpha);
+		unsigned char* data = stbi_load(imageFile.c_str(), &mWidth, &mHeight, &nrChannels, 0);
 
 		if (data == nullptr)
 		{

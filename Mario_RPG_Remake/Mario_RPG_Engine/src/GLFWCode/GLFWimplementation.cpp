@@ -24,6 +24,30 @@ namespace Mario_RPG_Engine
 
 		mWindow = glfwCreateWindow(width, height, windowName.c_str(), NULL, NULL);
 		glfwMakeContextCurrent(mWindow);
+
+		glfwSetWindowUserPointer(mWindow, &mCallbacks);
+
+		glfwSetKeyCallback(mWindow, [](GLFWwindow* window, int keycode, int scancode, int action, int mods) {
+			if (action == GLFW_PRESS)
+			{
+				CallBacks* callbacks{ (CallBacks*)glfwGetWindowUserPointer(window) };
+
+				KeyPressed e{ keycode };
+				callbacks->keyPressedFunc(e);
+			}
+			else if (action == GLFW_RELEASE)
+			{
+				CallBacks* callbacks{ (CallBacks*)glfwGetWindowUserPointer(window) };
+
+				KeyReleased e{ keycode };
+				callbacks->keyReleasedFunc(e);
+			}
+			});
+
+		glfwSetWindowCloseCallback(mWindow, [](GLFWwindow* window) {
+				CallBacks* callbacks{ (CallBacks*)glfwGetWindowUserPointer(window) };
+				callbacks->windowCloseFunc();
+			});
 	}
 
 	void GLFWimplementation::SwapBuffers()
@@ -48,5 +72,20 @@ namespace Mario_RPG_Engine
 		int height{ 0 }, width{ 0 };
 		glfwGetWindowSize(mWindow, &width, &height);
 		return height;
+	}
+	void GLFWimplementation::SetKeyPressedCallBack(std::function<void(const KeyPressed&)> callbackFunc)
+	{
+		mCallbacks.keyPressedFunc = callbackFunc;
+	}
+
+	void GLFWimplementation::SetKeyReleasedCallBack(std::function<void(const KeyReleased&)> callbackFunc)
+	{
+		mCallbacks.keyReleasedFunc = callbackFunc;
+	}
+
+
+	void GLFWimplementation::SetWindowCloseCallback(std::function<void()> callbackFunc)
+	{
+		mCallbacks.windowCloseFunc = callbackFunc;
 	}
 }

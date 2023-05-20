@@ -60,4 +60,16 @@ namespace Mario_RPG_Engine
 			delete mImplementation;
 		}
 	}
+	void GameWindow::SetKeyPressedCallBack(std::function<void(const KeyPressed&)> callbackFunc)
+	{
+		mImplementation->SetKeyPressedCallBack(callbackFunc);
+	}
+	void GameWindow::SetKeyReleasedCallBack(std::function<void(const KeyPressed&)> callbackFunc)
+	{
+		mImplementation->SetKeyReleasedCallBack(callbackFunc);
+	}
+	void GameWindow::SetWindowCloseCallback(std::function<void()> callbackFunc)
+	{
+		mImplementation->SetWindowCloseCallback(callbackFunc);
+	}
 }

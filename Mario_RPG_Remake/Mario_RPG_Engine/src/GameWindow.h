@@ -3,6 +3,7 @@
 #include "pch.h"
 #include "MarioRPGUtils.h"
 #include "WindowImplementation.h"
+#include "MarioRPGEvents.h"
 
 namespace Mario_RPG_Engine
 {
@@ -22,6 +23,10 @@ namespace Mario_RPG_Engine
 		static int GetHeight();
 
 		~GameWindow();
+
+		void SetKeyPressedCallBack(std::function<void(const KeyPressed&)> callbackFunc);
+		void SetKeyReleasedCallBack(std::function<void(const KeyPressed&)> callbackFunc);
+		void SetWindowCloseCallback(std::function<void()> callbackFunc);
 	private:
 		GameWindow(); // prevent posibility of creating second object
 		inline static std::unique_ptr<GameWindow> mInstance{ nullptr };
