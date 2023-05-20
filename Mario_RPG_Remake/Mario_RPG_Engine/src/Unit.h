@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "MarioRPGUtils.h"
 #include "Image.h"
 #include "RendererTypes.h"

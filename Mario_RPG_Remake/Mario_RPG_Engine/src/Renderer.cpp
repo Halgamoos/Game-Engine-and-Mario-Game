@@ -6,8 +6,8 @@
 
 namespace Mario_RPG_Engine
 {
-#ifdef MARIO_OPENGL
 	Renderer::Renderer() :
+#ifdef MARIO_OPENGL
 		mImplementation(std::unique_ptr<ImplRenderer>{ new OpenGLRenderer }),
 		mDefaultShader{ "../Assets/Shaders/DefaultVertexShader.glsl" , 
 			"../Assets/Shaders/DefaultFragmentShader.glsl" }
